@@ -3,7 +3,7 @@ import apiRouter from './routes';
 
 const app = express();
 
-//MIDDLEWARES
+// MIDDLEWARES
 
 // // cors middleware
 // app.use(cors());
