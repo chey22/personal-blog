@@ -16,9 +16,10 @@ router.get('/', async (req, res) => {
 });
 
 // get one blog tag based on its unique id
-router.get('/:id?', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-        let tags = await db.Tags.tOne(parseInt(req.params.id, 10));
+        const blogid = (parseInt(req.params.id, 10));
+        let tags = await db.Tags.tOne(blogid)
         res.json(tags)
     } catch(e) {
         console.log(e);
