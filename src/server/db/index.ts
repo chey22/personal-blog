@@ -4,6 +4,7 @@ import config from "../config";
 // may need to be right above export stmt
 import Blogs from "./queries/blogs";
 import Tags from "./queries/tags";
+import BlogTags from "./queries/blogtags";
 
 const pool = mysql.createPool(config.mysql);
 
@@ -11,12 +12,13 @@ const pool = mysql.createPool(config.mysql);
 // const userid = '1; DROP TABLE users;'
 // console.log('SELECT * FROM users WHERE id = ${userid}');
 
-export const Query = (query: string, values?: any) => { // or: (query:string, values?: Array<string | number>)
-  
-  const sql = mysql.format(query, values);
-  console.log(sql)
+export const Query = <T = any>(query: string, values?: any) => {
+  // or: (query:string, values?: Array<string | number>)
 
-    return new Promise((resolve, reject) => {
+  const sql = mysql.format(query, values);
+  console.log(sql);
+
+  return new Promise<T>((resolve, reject) => {
     // pool.query(query, values, (err, results) -- this is poor practice bc it allows the user to have access to the variables query and values in plain text. Updated version below.
     pool.query(sql, (err, results) => {
       if (err) {
@@ -29,7 +31,6 @@ export const Query = (query: string, values?: any) => { // or: (query:string, va
 };
 
 // Query('SELECT * FROM users WHERE id = ?', [1]);
-
 
 // OLD - landers version
 // export const Connection = mysql.createConnection(config.mysql);
@@ -50,5 +51,6 @@ export const Query = (query: string, values?: any) => { // or: (query:string, va
 
 export default {
   Blogs,
-  Tags
+  Tags,
+  BlogTags
 };
