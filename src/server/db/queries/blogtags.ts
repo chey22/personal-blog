@@ -1,5 +1,7 @@
 import { Query } from "../index";
 
+// import { IBlogTags } from '..src/utils/types'
+
 interface IBlogTags {
   blogid: number;
   tagid: number;

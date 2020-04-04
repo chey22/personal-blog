@@ -1,25 +1,26 @@
 import * as React from "react";
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './views/Home';
-import Details from './views/Details';
-import Compose from './views/Compose';
-import Admin from './views/Admin';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./views/Home";
+import Details from "./views/Details";
+import Compose from "./views/Compose";
+import Admin from "./views/Admin";
+import HomeCard from './components/HomeCard'
 
-const App: React.FC<IAppProps> = () => {
-	return (
-		<Router>
-			<Navbar />
-			<Switch>
-				<Route exact path="/blogs/:id" component={Details} />
-				<Route exact path="/views/compose" component={Compose} />
-				<Route exact path="/views/admin/:id" component={Admin} />
-				<Route path="/" component={Home} />
-			</Switch>
-		</Router>
-	)
-}
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        {/* <Route exact path="/blogs/:id" component={Details} />
+        <Route exact path="/views/compose" component={Compose} />
+        <Route exact path="/views/admin/:id" component={Admin} /> */}
+        <Route path="/" component={Home} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 // // all boilerplate template below
 
@@ -55,6 +56,9 @@ const App: React.FC<IAppProps> = () => {
 //   }
 // }
 
-export interface IAppProps {}
+
+export interface IAppState {
+  name: string;
+}
 
 export default App;

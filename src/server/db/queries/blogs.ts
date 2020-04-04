@@ -1,12 +1,14 @@
 import { Query } from '../index';
 // import db from './db'
 
-const all = async () => {
-    return Query('SELECT * FROM blogs');
+const all = () => {
+    // return Query('SELECT * FROM blogs');
+    return Query(`SELECT blogs.*, authors.name FROM blogs JOIN authors ON authors.id = blogs.authorid`);
 };
 
-const one = async (id: number) => {
-    return Query('SELECT * FROM blogs WHERE id = ?', [id]);
+const one = (id: number) => {
+    // return Query('SELECT * FROM blogs WHERE id = ?', [id]);
+    return Query(`SELECT blogs.*, authors.name FROM blogs JOIN authors ON authors.id = blogs.authorid WHERE blogs.id = ?`, [id]);
 };
 
 // POST a new Blog, with at least one tag
