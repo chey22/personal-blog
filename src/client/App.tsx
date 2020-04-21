@@ -13,9 +13,9 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        {/* <Route exact path="/blogs/:id" component={Details} />
+        <Route exact path="/blogs/:id" component={Details} />
         <Route exact path="/views/compose" component={Compose} />
-        <Route exact path="/views/admin/:id" component={Admin} /> */}
+        <Route exact path="/views/admin/:id" component={Admin} />
         <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
