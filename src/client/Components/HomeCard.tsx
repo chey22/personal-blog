@@ -3,7 +3,6 @@ import { IBlog } from "../utils/types";
 import { useHistory } from "react-router-dom"; // replaces Link to so that the card is clickable instead of a link
 
 const HomeCard: React.FC<HomeCardProps> = (props) => {
-  
   const history = useHistory(); // gives access to the history prop from BrowserRouter
 
   return (

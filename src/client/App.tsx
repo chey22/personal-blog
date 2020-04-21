@@ -22,7 +22,7 @@ const App: React.FC = () => {
   );
 };
 
-// // all boilerplate template below
+// // all boilerplate template below - Class components (do not use)
 
 // class App extends React.Component<IAppProps, IAppState> {
 //   constructor(props: IAppProps) {

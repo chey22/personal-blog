@@ -37,6 +37,7 @@ const Home: React.FC<HomeProps> = () => {
   );
 };
 
+// // Class Component - do not use
 // class Home extends React.Component<IAppProps, IAppState> {
 //   constructor(props: IAppProps) {
 //     super(props);

@@ -5,7 +5,8 @@ const Navbar: React.FC<NavbarProps> = () => {
     return (
         
         <nav className="nav p-2 shadow justify-content-end align-items-center">
-            <NavLink className="py-2 mx-2 text-dark" activeClassName="py-2 mx-2 border-bottom border-dark" exact to="/">Blogs / Home</NavLink>
+            <NavLink className="py-2 mx-2 text-dark" activeClassName="py-2 mx-2 border-bottom border-dark" exact to="/">Home</NavLink>
+            <NavLink className="py-2 mx-2 text-dark" activeClassName="py-2 mx-2 border-bottom border-dark" exact to="/blogs">Blogs</NavLink>
             <NavLink className="py-2 mx-2 text-dark" activeClassName="py-2 mx-2 border-bottom border-dark" exact to="/compose">Compose</NavLink>
         </nav>
     )
